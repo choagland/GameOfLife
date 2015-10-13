@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConwaySimulator.cs" />
+    <Compile Include="GameBoard.cs" />
+    <Compile Include="IRandomGameBoardGenerator.cs" />
+    <Compile Include="IWorldOutputter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
