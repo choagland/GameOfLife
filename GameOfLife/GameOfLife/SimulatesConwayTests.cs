@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace GameOfLife
 {
    [TestClass]
-   public class UnitTest1
+   public class SimulatesConwayTests
    {
       [TestMethod]
       public void TestMethod1()
