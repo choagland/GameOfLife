@@ -17,7 +17,7 @@ namespace GameOfLife
          var mockGameboardRandomizer = new Mock<IGameBoardRandomizer>();
          mockGameboardRandomizer.Setup( gbr => gbr.Randomize( It.IsAny<GameBoard>() ) ).Returns( randomizedGameboard );
 
-         var subject = new RandomGameBoardGenerator();
+         var subject = new RandomGameBoardGenerator( mockGameboardRandomizer.Object );
          subject.generate( 42, 42 );
 
          mockGameboardRandomizer.Verify( gbr => gbr.Randomize( It.IsAny<GameBoard>() ) );
