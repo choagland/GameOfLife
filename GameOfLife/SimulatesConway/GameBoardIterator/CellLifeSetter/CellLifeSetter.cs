@@ -20,10 +20,10 @@ namespace SimulatesConway.GameBoardIterator.CellLifeSetter
          {
             cell.IsAlive = true;
          }
-         //if (numberOfLivingNeighbors == 3)
-         //{
-         //   cell.IsAlive = true;
-         //}
+         if ( numberOfLivingNeighbors == 3 )
+         {
+            cell.IsAlive = true;
+         }
          return cell;
       }
    }
