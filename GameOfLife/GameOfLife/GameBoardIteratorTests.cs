@@ -17,7 +17,7 @@ namespace GameOfLife
          var subject = new GameBoardIterator();
          subject.Iterate( gameBoard );
 
-         mockNeighborCounter.Verify( nc => nc.Count( It.IsAny<GameBoardCell[,]>(), It.IsAny<int>(), It.IsAny<int>() ), Times.Exactly(15) );
+         mockNeighborCounter.Verify( nc => nc.Count( It.IsAny<GameBoardCell[,]>(), It.IsAny<CellCoordinates>()), Times.Exactly(15) );
       }
 
       [TestMethod]
@@ -30,6 +30,19 @@ namespace GameOfLife
          subject.Iterate( gameBoard );
 
          mockCellLifeSetter.Verify( cls => cls.SetLife( It.IsAny<int>(), It.IsAny<GameBoardCell>() ), Times.Exactly( 15 ) );
+      }
+
+      [TestMethod]
+      public void Iterate_FindsCellCoordinates()
+      {
+         var mockCellCoordinateFinder = new Mock<ICellCoordinatesFinder>();
+         var gameBoard = new GameBoard( 3, 5 );
+
+         var subject = new GameBoardIterator();
+         subject.Iterate( gameBoard );
+
+         mockCellCoordinateFinder.Verify( ccf => ccf.Find( gameBoard.GameBoardCells, It.IsAny<GameBoardCell>()), Times.Exactly( 15 ) );
+
       }
    }
 }
