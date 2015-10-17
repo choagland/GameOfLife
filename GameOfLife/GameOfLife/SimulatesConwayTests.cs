@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using SimulatesConway;
-using SimulatesConway.GameBoardGenerator;
 using SimulatesConway.ValueTypes;
 
 namespace GameOfLife

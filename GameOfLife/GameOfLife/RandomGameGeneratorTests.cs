@@ -1,8 +1,5 @@
-﻿using System;
-using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using SimulatesConway;
 using SimulatesConway.GameBoardGenerator;
 using SimulatesConway.ValueTypes;
 

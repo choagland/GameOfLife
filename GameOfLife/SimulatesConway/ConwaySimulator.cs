@@ -1,5 +1,4 @@
-﻿using SimulatesConway.GameBoardGenerator;
-using SimulatesConway.ValueTypes;
+﻿using SimulatesConway.ValueTypes;
 
 namespace SimulatesConway
 {
