@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="ConwaySimulator.cs" />
     <Compile Include="GameBoard.cs" />
+    <Compile Include="GameBoardGenerator\IGameBoardRandomizer.cs" />
+    <Compile Include="GameBoardGenerator\RandomGameBoardGenerator.cs" />
     <Compile Include="IGameBoardGenerator.cs" />
     <Compile Include="IGameBoardIterator.cs" />
     <Compile Include="IGameBoardOutputter.cs" />

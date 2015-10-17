@@ -1,4 +1,6 @@
-﻿namespace SimulatesConway
+﻿using SimulatesConway.GameBoardGenerator;
+
+namespace SimulatesConway
 {
    public class ConwaySimulator
    {
