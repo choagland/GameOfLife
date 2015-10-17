@@ -57,6 +57,28 @@ namespace GameOfLife
          cell.IsAlive.Should().BeTrue( );
       }
 
+      [TestMethod]
+      public void SetLife_DeadCellTwoNeighbors_StaysDead()
+      {
+         GameBoardCell cell = DeadCell();
+
+         var subject = new CellLifeSetter();
+         subject.SetLife( 2, cell );
+
+         cell.IsAlive.Should().BeFalse("two is not enough to raise dead cells to life");
+      }
+
+      [TestMethod]
+      public void SetLife_DeadCellThreeNeighbors_Resurrects()
+      {
+         GameBoardCell cell = DeadCell();
+
+         var subject = new CellLifeSetter();
+         subject.SetLife( 3, cell );
+
+         cell.IsAlive.Should().BeTrue( "three is enough to raise dead cells to life" );
+      }
+
 
    }
 }
