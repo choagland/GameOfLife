@@ -34,5 +34,16 @@ namespace GameOfLife
 
          cell.IsAlive.Should().BeFalse( "it should die of hunger." );
       }
+
+      [TestMethod]
+      public void SetLife_LiveCellFourNeighbors_Dies()
+      {
+         GameBoardCell cell = AliveCell();
+
+         var subject = new CellLifeSetter();
+         subject.SetLife( 4, cell );
+
+         cell.IsAlive.Should().BeFalse( "it should die of overpopulation." );
+      }
    }
 }
