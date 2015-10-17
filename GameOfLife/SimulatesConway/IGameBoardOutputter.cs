@@ -1,6 +1,6 @@
 ﻿namespace SimulatesConway
 {
-   public interface IWorldOutputter
+   public interface IGameBoardOutputter
    {
       void Output( GameBoard gameBoard );
    }

@@ -1,6 +1,6 @@
 ﻿namespace SimulatesConway
 {
-   public interface IRandomGameBoardGenerator
+   public interface IGameBoardGenerator
    {
       GameBoard generate( int width, int height );
    }

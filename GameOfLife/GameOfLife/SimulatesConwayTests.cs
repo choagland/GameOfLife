@@ -10,15 +10,51 @@ namespace GameOfLife
       [TestMethod]
       public void ZeroIterations()
       {
-         var seedBoard = new GameBoard(); 
-         var mockRandomGameBoardGenerator = new Mock<IRandomGameBoardGenerator>();
-         mockRandomGameBoardGenerator.Setup( g => g.generate( It.IsAny<int>(), It.IsAny<int>() ) ).Returns(seedBoard);
-         var mockWorldOutputter = new Mock<IWorldOutputter>();
+         var seedBoard = new GameBoard();
+         var mockGameBoardGenerator = new Mock<IGameBoardGenerator>();
+         mockGameBoardGenerator.Setup( g => g.generate( It.IsAny<int>(), It.IsAny<int>() ) ).Returns( seedBoard );
+         var mockWorldOutputter = new Mock<IGameBoardOutputter>();
 
-         var subject = new ConwaySimulator(mockRandomGameBoardGenerator.Object, mockWorldOutputter.Object);
-         subject.Simulate(42, 42, 0);
+         var subject = new ConwaySimulator( mockGameBoardGenerator.Object, new Mock<IGameBoardIterator>().Object, mockWorldOutputter.Object );
+         subject.Simulate( 42, 42, 0 );
 
          mockWorldOutputter.Verify( w => w.Output( seedBoard ) );
+      }
+
+      [TestMethod]
+      public void OneIteration()
+      {
+         var seedBoard = new GameBoard();
+         var iteratedBoard = new GameBoard();
+         var mockGameBoardGenerator = new Mock<IGameBoardGenerator>();
+         mockGameBoardGenerator.Setup( g => g.generate( It.IsAny<int>(), It.IsAny<int>() ) ).Returns( seedBoard );
+         var mockGameBoardIterator = new Mock<IGameBoardIterator>();
+         mockGameBoardIterator.Setup( gbi => gbi.Iterate( seedBoard ) ).Returns( iteratedBoard );
+         var mockWorldOutputter = new Mock<IGameBoardOutputter>();
+
+         var subject = new ConwaySimulator( mockGameBoardGenerator.Object, mockGameBoardIterator.Object, mockWorldOutputter.Object );
+         subject.Simulate( 42, 42, 1 );
+
+         mockWorldOutputter.Verify( o => o.Output( iteratedBoard ) );
+      }
+
+      [TestMethod]
+      public void TwoIterations()
+      {
+         var seedBoard = new GameBoard();
+         var iteratedBoard1 = new GameBoard();
+         var iteratedBoard2 = new GameBoard();
+         var mockGameBoardGenerator = new Mock<IGameBoardGenerator>();
+         mockGameBoardGenerator.Setup( g => g.generate( It.IsAny<int>(), It.IsAny<int>() ) ).Returns( seedBoard );
+         var mockGameBoardIterator = new Mock<IGameBoardIterator>();
+         mockGameBoardIterator.Setup( gbi => gbi.Iterate( seedBoard ) ).Returns( iteratedBoard1 );
+         mockGameBoardIterator.Setup( gbi => gbi.Iterate( iteratedBoard1 ) ).Returns( iteratedBoard2 );
+         var mockWorldOutputter = new Mock<IGameBoardOutputter>();
+
+         var subject = new ConwaySimulator( mockGameBoardGenerator.Object, mockGameBoardIterator.Object, mockWorldOutputter.Object );
+         subject.Simulate( 42, 42, 2 );
+
+         mockWorldOutputter.Verify( o => o.Output( iteratedBoard2 ) );
       }
    }
 }
