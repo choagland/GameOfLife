@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimulatesConway.GameBoardIterator.CellCoordinatesFinder;
 using SimulatesConway.ValueTypes;
 using FluentAssertions;
@@ -31,12 +30,11 @@ namespace GameOfLife
                new GameBoardCell(), new GameBoardCell(), new GameBoardCell()
             }
          };
-         //position should be 3,0
 
          var subject = new CellCoordinatesFinder();
          CellCoordinates coordinates = subject.Find( cells, cellToFind );
 
-         coordinates.X.Should().Be( 3 );
+         coordinates.X.Should().Be( 2 );
          coordinates.Y.Should().Be( 0 );
       }
    }
