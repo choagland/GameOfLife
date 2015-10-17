@@ -47,6 +47,7 @@
     <Compile Include="GameBoardGenerator\GameBoardRandomizer\ICellRandomizer.cs" />
     <Compile Include="GameBoardGenerator\IGameBoardRandomizer.cs" />
     <Compile Include="GameBoardGenerator\RandomGameBoardGenerator.cs" />
+    <Compile Include="GameBoardIterator\CellCoordinatesFinder\CellCoordinatesFinder.cs" />
     <Compile Include="GameBoardIterator\GameBoardIterator.cs" />
     <Compile Include="GameBoardIterator\ICellCoordinatesFinder.cs" />
     <Compile Include="GameBoardIterator\ICellLifeSetter.cs" />

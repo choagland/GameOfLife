@@ -66,6 +66,7 @@
     <Compile Include="SimulatesConwayTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GameBoardIteratorTests.cs" />
+    <Compile Include="CellCoordinatesFinderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
