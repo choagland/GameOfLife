@@ -10,9 +10,13 @@ namespace SimulatesConway.GameBoardGenerator.GameBoardRandomizer
          _cellRandomizer = cellRandomizer;
       }
 
-      public GameBoard Randomize( GameBoard emptyGameBoard )
+      public GameBoard Randomize( GameBoard gameBoard )
       {
-         return emptyGameBoard;
+         foreach ( var gameBoardCell in gameBoard.GameBoardCells )
+         {
+            _cellRandomizer.RandomizeCell( gameBoardCell );
+         }
+         return gameBoard;
       }
    }
 }
