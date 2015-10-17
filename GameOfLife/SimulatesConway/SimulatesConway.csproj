@@ -42,10 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConwaySimulator.cs" />
+    <Compile Include="GameBoardGenerator\GameBoardRandomizer\CellRandomizer\CellRandomizer.cs" />
     <Compile Include="GameBoardGenerator\GameBoardRandomizer\GameBoardRandomizer.cs" />
     <Compile Include="GameBoardGenerator\GameBoardRandomizer\ICellRandomizer.cs" />
     <Compile Include="GameBoardGenerator\IGameBoardRandomizer.cs" />
     <Compile Include="GameBoardGenerator\RandomGameBoardGenerator.cs" />
+    <Compile Include="GameBoardIterator\GameBoardIterator.cs" />
+    <Compile Include="GameBoardIterator\ICellLifeSetter.cs" />
+    <Compile Include="GameBoardIterator\INeighborCounter.cs" />
     <Compile Include="IGameBoardGenerator.cs" />
     <Compile Include="IGameBoardIterator.cs" />
     <Compile Include="IGameBoardOutputter.cs" />
