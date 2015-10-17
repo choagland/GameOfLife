@@ -45,5 +45,18 @@ namespace GameOfLife
 
          cell.IsAlive.Should().BeFalse( "it should die of overpopulation." );
       }
+
+      [TestMethod]
+      public void SetLife_LiveCellTwoNeighbors_Lives()
+      {
+         GameBoardCell cell = AliveCell();
+
+         var subject = new CellLifeSetter();
+         subject.SetLife( 2, cell );
+
+         cell.IsAlive.Should().BeTrue( );
+      }
+
+
    }
 }
