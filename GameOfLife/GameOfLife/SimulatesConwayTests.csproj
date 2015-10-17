@@ -62,6 +62,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="GameBoardRandomizerTests.cs" />
+    <Compile Include="NeighborCounterTests.cs" />
     <Compile Include="RandomGameGeneratorTests.cs" />
     <Compile Include="SimulatesConwayTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -52,6 +52,7 @@
     <Compile Include="GameBoardIterator\ICellCoordinatesFinder.cs" />
     <Compile Include="GameBoardIterator\ICellLifeSetter.cs" />
     <Compile Include="GameBoardIterator\INeighborCounter.cs" />
+    <Compile Include="GameBoardIterator\NeighborCounter.cs" />
     <Compile Include="IGameBoardGenerator.cs" />
     <Compile Include="IGameBoardIterator.cs" />
     <Compile Include="IGameBoardOutputter.cs" />
