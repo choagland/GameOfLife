@@ -1,4 +1,6 @@
-﻿namespace SimulatesConway
+﻿using SimulatesConway.ValueTypes;
+
+namespace SimulatesConway
 {
    public interface IGameBoardIterator
    {

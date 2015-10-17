@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConwaySimulator.cs" />
-    <Compile Include="GameBoard.cs" />
+    <Compile Include="GameBoardGenerator\GameBoardRandomizer\GameBoardRandomizer.cs" />
     <Compile Include="GameBoardGenerator\IGameBoardRandomizer.cs" />
     <Compile Include="GameBoardGenerator\RandomGameBoardGenerator.cs" />
     <Compile Include="IGameBoardGenerator.cs" />
@@ -50,6 +50,8 @@
     <Compile Include="IGameBoardOutputter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueTypes\GameBoard.cs" />
+    <Compile Include="ValueTypes\GameBoardCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

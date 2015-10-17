@@ -1,4 +1,6 @@
-﻿namespace SimulatesConway.GameBoardGenerator
+﻿using SimulatesConway.ValueTypes;
+
+namespace SimulatesConway.GameBoardGenerator
 {
    public class RandomGameBoardGenerator : IGameBoardGenerator
    {
@@ -10,7 +12,7 @@
       }
       public GameBoard generate( int width, int height )
       {
-         var emptyGameBoard = new GameBoard();
+         var emptyGameBoard = new GameBoard(width, height);
          GameBoard randomizedGameBoard = _gameBoardRandomizer.Randomize( emptyGameBoard );
          return randomizedGameBoard;
       }

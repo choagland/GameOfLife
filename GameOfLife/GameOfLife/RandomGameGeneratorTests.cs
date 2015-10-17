@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using SimulatesConway;
 using SimulatesConway.GameBoardGenerator;
+using SimulatesConway.ValueTypes;
 
 namespace GameOfLife
 {
@@ -13,7 +14,7 @@ namespace GameOfLife
       [TestMethod]
       public void Randomize_ParentCallsGenerate_IsInvoked()
       {
-         var randomizedGameboard = new GameBoard();
+         var randomizedGameboard = new GameBoard(42, 42);
          var mockGameboardRandomizer = new Mock<IGameBoardRandomizer>();
          mockGameboardRandomizer.Setup( gbr => gbr.Randomize( It.IsAny<GameBoard>() ) ).Returns( randomizedGameboard );
 

@@ -1,4 +1,6 @@
-﻿namespace SimulatesConway.GameBoardGenerator
+﻿using SimulatesConway.ValueTypes;
+
+namespace SimulatesConway.GameBoardGenerator
 {
    public interface IGameBoardRandomizer
    {

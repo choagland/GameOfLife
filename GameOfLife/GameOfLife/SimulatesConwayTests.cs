@@ -2,6 +2,7 @@
 using Moq;
 using SimulatesConway;
 using SimulatesConway.GameBoardGenerator;
+using SimulatesConway.ValueTypes;
 
 namespace GameOfLife
 {
@@ -11,7 +12,7 @@ namespace GameOfLife
       [TestMethod]
       public void ZeroIterations()
       {
-         var seedBoard = new GameBoard();
+         var seedBoard = new GameBoard(42, 42);
          var mockGameBoardGenerator = new Mock<IGameBoardGenerator>();
          mockGameBoardGenerator.Setup( g => g.generate( It.IsAny<int>(), It.IsAny<int>() ) ).Returns( seedBoard );
          var mockWorldOutputter = new Mock<IGameBoardOutputter>();
@@ -25,8 +26,8 @@ namespace GameOfLife
       [TestMethod]
       public void OneIteration()
       {
-         var seedBoard = new GameBoard();
-         var iteratedBoard = new GameBoard();
+         var seedBoard = new GameBoard(42, 42);
+         var iteratedBoard = new GameBoard(42, 42);
          var mockGameBoardGenerator = new Mock<IGameBoardGenerator>();
          mockGameBoardGenerator.Setup( g => g.generate( It.IsAny<int>(), It.IsAny<int>() ) ).Returns( seedBoard );
          var mockGameBoardIterator = new Mock<IGameBoardIterator>();
@@ -42,9 +43,9 @@ namespace GameOfLife
       [TestMethod]
       public void TwoIterations()
       {
-         var seedBoard = new GameBoard();
-         var iteratedBoard1 = new GameBoard();
-         var iteratedBoard2 = new GameBoard();
+         var seedBoard = new GameBoard(42, 42);
+         var iteratedBoard1 = new GameBoard( 42, 42 );
+         var iteratedBoard2 = new GameBoard( 42, 42 );
          var mockGameBoardGenerator = new Mock<IGameBoardGenerator>();
          mockGameBoardGenerator.Setup( g => g.generate( It.IsAny<int>(), It.IsAny<int>() ) ).Returns( seedBoard );
          var mockGameBoardIterator = new Mock<IGameBoardIterator>();
