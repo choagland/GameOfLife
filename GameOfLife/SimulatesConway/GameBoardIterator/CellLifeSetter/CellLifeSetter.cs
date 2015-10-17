@@ -11,14 +11,15 @@ namespace SimulatesConway.GameBoardIterator.CellLifeSetter
    {
       public GameBoardCell SetLife( int numberOfLivingNeighbors, GameBoardCell cell )
       {
+         bool wasAlive = cell.IsAlive;
          if ( numberOfLivingNeighbors <= 2 | numberOfLivingNeighbors > 3 )
          {
             cell.IsAlive = false;
          }
-         //if (cell.IsAlive && numberOfLivingNeighbors == 2)
-         //{
-         //   cell.IsAlive = true;
-         //}
+         if ( wasAlive && numberOfLivingNeighbors == 2 )
+         {
+            cell.IsAlive = true;
+         }
          //if (numberOfLivingNeighbors == 3)
          //{
          //   cell.IsAlive = true;
