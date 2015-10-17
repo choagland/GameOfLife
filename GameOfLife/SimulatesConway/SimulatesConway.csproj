@@ -48,11 +48,12 @@
     <Compile Include="GameBoardGenerator\IGameBoardRandomizer.cs" />
     <Compile Include="GameBoardGenerator\RandomGameBoardGenerator.cs" />
     <Compile Include="GameBoardIterator\CellCoordinatesFinder\CellCoordinatesFinder.cs" />
+    <Compile Include="GameBoardIterator\CellLifeSetter\CellLifeSetter.cs" />
     <Compile Include="GameBoardIterator\GameBoardIterator.cs" />
     <Compile Include="GameBoardIterator\ICellCoordinatesFinder.cs" />
     <Compile Include="GameBoardIterator\ICellLifeSetter.cs" />
     <Compile Include="GameBoardIterator\INeighborCounter.cs" />
-    <Compile Include="GameBoardIterator\NeighborCounter.cs" />
+    <Compile Include="GameBoardIterator\NeighborCounter\NeighborCounter.cs" />
     <Compile Include="IGameBoardGenerator.cs" />
     <Compile Include="IGameBoardIterator.cs" />
     <Compile Include="IGameBoardOutputter.cs" />
@@ -65,6 +66,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

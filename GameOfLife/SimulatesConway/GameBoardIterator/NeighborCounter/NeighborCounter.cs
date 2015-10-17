@@ -24,7 +24,7 @@ namespace SimulatesConway.GameBoardIterator.NeighborCounter
          int width = gameBoardCells.GetLength( 1 );
          if ( xPosition < 0 | xPosition > height | yPosition < 0 | yPosition > width)
          {
-            return 0;
+            return 0; // out of bounds
          }
          if ( gameBoardCells[xPosition, yPosition].IsAlive )
          {

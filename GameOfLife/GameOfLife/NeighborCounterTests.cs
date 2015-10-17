@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimulatesConway.GameBoardIterator;
+using SimulatesConway.GameBoardIterator.NeighborCounter;
 using SimulatesConway.ValueTypes;
 
 namespace GameOfLife
@@ -8,7 +9,7 @@ namespace GameOfLife
    [TestClass]
    public class NeighborCounterTests
    {
-      private static GameBoardCell AliveCell()
+      private static GameBoardCell Alive()
       {
          return new GameBoardCell
          {
@@ -16,7 +17,7 @@ namespace GameOfLife
          };
       }
 
-      private static GameBoardCell DeadCell()
+      private static GameBoardCell Dead()
       {
          return new GameBoardCell
          {
@@ -30,10 +31,10 @@ namespace GameOfLife
          GameBoardCell[,] cells =
          {
             {
-               DeadCell(), AliveCell()
+               Dead(), Alive()
             },
             {
-               DeadCell(), AliveCell()
+               Dead(), Alive()
             }
          };
          var coordinates = new CellCoordinates
@@ -53,13 +54,13 @@ namespace GameOfLife
          GameBoardCell[,] cells =
          {
             {
-               DeadCell(), AliveCell(), AliveCell()
+               Dead(), Alive(), Alive()
             },
             {
-               DeadCell(), AliveCell(), AliveCell()
+               Dead(), Alive(), Alive()
             },
             {
-               DeadCell(), DeadCell(), AliveCell()
+               Dead(), Dead(), Alive()
             }
          };
          var coordinates = new CellCoordinates
