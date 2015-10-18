@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SimulatesConway.GameBoardIterator;
 using SimulatesConway.GameBoardIterator.NeighborCounter;
 using SimulatesConway.ValueTypes;
 
